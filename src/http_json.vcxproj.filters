@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="httpClient.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonBase.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="httpjson.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{2f04fc97-8ab5-410e-bbab-fdb04286d1b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{97d4ae4b-074c-4a1b-87b9-baea07dd8156}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="interface">
+      <UniqueIdentifier>{c6c8da45-dec3-4ca3-8f9d-e32bc5dd87cd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="httpClient.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonBase.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\interface\httpjson.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
