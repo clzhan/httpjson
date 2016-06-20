@@ -4,9 +4,6 @@
     <ClCompile Include="httpClient.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="JsonBase.cpp">
       <Filter>src</Filter>
     </ClCompile>
