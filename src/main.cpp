@@ -29,7 +29,7 @@ int main(int argc, char* argv[])
 	SRCurrentDllSoType dlltype;
 
 	dlltype.version3 = "2.6";
-	dlltype.id3 = "78:2b:cb:47:69:a8";
+	dlltype.id3 = "782bcb4769a8";
 	dlltype.appId = "12345";
 	dlltype.clientModel = "android";
 	dlltype.clientVersion = "1.1";
@@ -37,6 +37,7 @@ int main(int argc, char* argv[])
 	int ret = HttpGet(url, dlltype, key3);
 
 	printf("ret = %d\n", ret);
+	printf("key3 = %s\n", key3.c_str());
 
 	return 0;
 }

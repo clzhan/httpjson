@@ -29,39 +29,80 @@ int HttpGet(const std::string & strUrl, SRCurrentDllSoType dlltype, std::string 
 	CURL *curl;
 	CURLcode res;
 
+	std::string  strResponse;
+
+
 	curl = curl_easy_init();
 	if (curl)
 	{
-		std::string strparam1 = "version3:" + dlltype.version3;
-		std::string strparam2 = "id3:" + dlltype.id3;
-		std::string strparam3 = "appId:" + dlltype.appId;
-		std::string strparam4 = "clientModel:" + dlltype.clientModel;
-		std::string strparam5 = "clientVersion:" + dlltype.clientVersion;
-
 	
-		curl_easy_setopt(curl, CURLOPT_URL, strUrl.c_str());
-		struct curl_slist *headers = NULL; /* init to NULL is important */
-		headers = curl_slist_append(headers, strparam1.c_str());
-		headers = curl_slist_append(headers, strparam2.c_str());
-		headers = curl_slist_append(headers, strparam3.c_str());
-		headers = curl_slist_append(headers, strparam4.c_str());
-		headers = curl_slist_append(headers, strparam5.c_str());
-		/* pass our list of custom made headers */
-		curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+		std::string strparam6 = "?version3=" +dlltype.version3;
+		strparam6 = strparam6 + "&id3=" + dlltype.id3;
+		strparam6 = strparam6 + "&appId=" + dlltype.appId;
+
+		string currentAllurl = strUrl + strparam6;
+
+		printf("current url  %s\n", currentAllurl.c_str());
+		
+		curl_easy_setopt(curl, CURLOPT_URL, currentAllurl.c_str());
+		//struct curl_slist *headers = NULL; /* init to NULL is important */
+		//headers = curl_slist_append(headers, strparam1.c_str());
+		//headers = curl_slist_append(headers, strparam2.c_str());
+		//headers = curl_slist_append(headers, strparam3.c_str());
+		//headers = curl_slist_append(headers, strparam4.c_str());
+		//headers = curl_slist_append(headers, strparam5.c_str());
+		///* pass our list of custom made headers */
+		//curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+
+		curl_easy_setopt(curl, CURLOPT_HTTPGET, 1);
 
 		curl_easy_setopt(curl, CURLOPT_READFUNCTION, NULL);
 		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, OnWriteData);
-		curl_easy_setopt(curl, CURLOPT_WRITEDATA, (void *)&key3);
+		curl_easy_setopt(curl, CURLOPT_WRITEDATA, (void *)&strResponse);
+
+
+		curl_easy_setopt(curl, CURLOPT_NOSIGNAL, 1);
+		curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 3);
+		curl_easy_setopt(curl, CURLOPT_TIMEOUT, 3);
+
+
 		res = curl_easy_perform(curl);
 
-		curl_slist_free_all(headers); /* free the header list */
+		//curl_slist_free_all(headers); /* free the header list */
 		curl_easy_cleanup(curl);
 
-		printf("get key3   = %s\n", key3.data());
+		printf("get strResponse   = %s\n", strResponse.data());
 	}
 	else
 	{
 		return -1;
+	}
+
+	Json::Reader reader;
+	Json::Value value;
+
+	if (reader.parse(strResponse, value))
+	{
+		Json::Value data = value["data"];
+		std::string code = value["code"].asString();
+
+		if (code.compare("200") != 0)
+		{
+			return -1;
+		}
+
+		printf("code %s\n", code.c_str());
+
+		std::string version3_from_server = data["version3"].asString();
+		std::string id3_from_server = data["id3"].asString();
+		std::string key3_from_server = data["key3"].asString();
+
+		key3 = key3_from_server;
+
+		printf("version3_from_server %s\n", version3_from_server.c_str());
+		printf("id3_from_server %s\n", id3_from_server.c_str());
+		printf("key3_from_server %s\n", key3_from_server.c_str());
+
 	}
 
 	

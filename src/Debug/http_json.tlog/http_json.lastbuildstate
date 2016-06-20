@@ -1,2 +1,2 @@
 #TargetFrameworkVersion=v4.0:PlatformToolSet=v120:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit
-Debug|Win32|E:\3.3\splansdk\httpclient\test\http_json\build\win\|
+Debug|Win32|E:\github\httpjson\build\win\|
