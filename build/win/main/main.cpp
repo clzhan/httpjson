@@ -24,12 +24,14 @@ string& trim(string &s)
 int main(int argc, char* argv[])
 {
 
+
 	std:string url = "http://103.249.255.237/utils/v1/utils/getkey3";
 
 	SRCurrentDllSoType dlltype;
 
 	dlltype.version3 = "2.6";
-	dlltype.id3 = "782bcb4769a8";
+	dlltype.id3 = "88708c18e451";
+	//dlltype.id3 = "78F5FD5CE9E3";
 	dlltype.appId = "12345";
 	dlltype.clientModel = "android";
 	dlltype.clientVersion = "1.1";
