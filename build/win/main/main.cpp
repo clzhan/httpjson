@@ -110,11 +110,11 @@ int main(int argc, char* argv[])
 	dlltype.appId = "12345";
 	dlltype.clientModel = "android";
 	dlltype.clientVersion = "1.1";
-	string key3;
-	int ret = HttpGet(url, dlltype, key3);
+	char key3[64] = {0};
+	int ret = HttpGet(url, &dlltype, key3, 64);
 
 	printf("ret = %d\n", ret);
-	printf("key3 = %s\n", key3.c_str());
+	printf("key3 = %s\n", key3);
 
 	char   mac[200];
 	GetMac(mac);

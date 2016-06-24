@@ -2,6 +2,7 @@
 #include "httpClient.h"
 #include "JsonBase.h"
 
+
 static size_t OnWriteData(void* buffer, size_t size, size_t nmemb, void* lpVoid)
 {
 	std::string* str = dynamic_cast<std::string*>((std::string *)lpVoid);
@@ -88,38 +89,30 @@ int HttpGet(const std::string & strUrl, SRCurrentDllSoType *dlltype, char* key3,
 	Json::Reader reader;
 	Json::Value value;
 	
-	printf("%s %d\n",__func__,__LINE__);
 
 	if (reader.parse(strResponse, value))
 	{
-		printf("%s %d\n",__func__,__LINE__);
+
 		Json::Value data = value["data"];
 		std::string code = value["code"].asString();
-		printf("%s %d\n",__func__,__LINE__);
+
 
 		if (code.compare("200") != 0)
 		{
 			return -1;
 		}
-		printf("%s %d\n",__func__,__LINE__);
-
-		printf("code %s\n", code.c_str());
 
 		std::string version3_from_server = data["version3"].asString();
-		printf("%s %d\n",__func__,__LINE__);
+
 		std::string id3_from_server = data["id3"].asString();
-		printf("%s %d\n",__func__,__LINE__);
+
 		std::string key3_from_server = data["key3"].asString();
-		printf("%s %d\n",__func__,__LINE__);
 
-
-		printf("key3_from_server %s\n", key3_from_server.c_str());
 	
 		if(key3_from_server.empty())
 		{
 			return -1;
 		}
-
 		strncpy(key3, key3_from_server.c_str(), key3_from_server.size());
 
 		printf("version3_from_server %s\n", version3_from_server.c_str());
