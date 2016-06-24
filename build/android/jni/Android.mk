@@ -8,6 +8,12 @@ LOCAL_MODULE          := libjsoncpp
 LOCAL_SRC_FILES := ./thirdparty/lib/android/libjsoncpp.a
 include $(PREBUILT_STATIC_LIBRARY)
 
+include $(CLEAR_VARS)
+
+LOCAL_MODULE          := libcurl
+LOCAL_SRC_FILES := ./thirdparty/lib/android/libcurl.a
+include $(PREBUILT_STATIC_LIBRARY)
+
 
 
 include $(CLEAR_VARS)
@@ -46,11 +52,11 @@ LOCAL_C_INCLUDES :=  \
 
 #LOCAL_STATIC_LIBRARIES := jsoncpp curl 
 
-LOCAL_WHOLE_STATIC_LIBRARIES := jsoncpp
+LOCAL_WHOLE_STATIC_LIBRARIES := jsoncpp curl
 
 #LOCAL_LDLIBS += $(LOCAL_PATH)/thirdparty/lib/android/libjsoncpp.a
 
-LOCAL_LDLIBS += $(LOCAL_PATH)/thirdparty/lib/android/libcurl.a
+#LOCAL_LDLIBS += $(LOCAL_PATH)/thirdparty/lib/android/libcurl.a
 
 LOCAL_LDLIBS += -L$(SYSROOT)/usr/lib -llog -lz
 
