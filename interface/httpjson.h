@@ -28,6 +28,6 @@ typedef struct CurrentDllSoType
 
 }SRCurrentDllSoType, *PSRCurrentDllSoType;
 
-HTTPJSON_API int HttpGet(const std::string & strUrl, SRCurrentDllSoType dlltype, std::string & key3);
+HTTPJSON_API int HttpGet(const std::string & strUrl, SRCurrentDllSoType *dlltype, std::string & key3);
 
 #endif

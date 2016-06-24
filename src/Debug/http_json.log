@@ -1,27 +1,16 @@
-﻿生成启动时间为 2016/6/20 11:03:58。
+﻿生成启动时间为 2016/6/23 19:48:23。
      1>项目“E:\github\httpjson\src\http_json.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I../interface /I../thirdparty/include /I"d:\Program Files (x86)\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D _WINSOCK_DEPRECATED_NO_WARNINGS /D CURL_STATICLIB /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt httpClient.cpp httpjson.cpp JsonBase.cpp
-         JsonBase.cpp
-     1>e:\github\httpjson\src\jsonbase.cpp(171): warning C4018: “>”: 有符号/无符号不匹配
-     1>e:\github\httpjson\src\jsonbase.cpp(321): warning C4018: “>”: 有符号/无符号不匹配
-     1>e:\github\httpjson\src\jsonbase.cpp(401): warning C4018: “>”: 有符号/无符号不匹配
-     1>e:\github\httpjson\src\jsonbase.cpp(687): warning C4018: “>”: 有符号/无符号不匹配
-     1>e:\github\httpjson\src\jsonbase.cpp(777): warning C4018: “>”: 有符号/无符号不匹配
-     1>e:\github\httpjson\src\jsonbase.cpp(836): warning C4018: “>=”: 有符号/无符号不匹配
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I../interface /I../thirdparty/include /I"d:\Program Files (x86)\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D _WINSOCK_DEPRECATED_NO_WARNINGS /D CURL_STATICLIB /D HTTPJSON_EXPORTS /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt httpjson.cpp
          httpjson.cpp
      1>e:\github\httpjson\src\httpclient.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-         httpClient.cpp
-     1>e:\github\httpjson\src\httpclient.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-         正在生成代码...
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\github\httpjson\build\win\Debug\http_json.dll" /INCREMENTAL /NOLOGO /LIBPATH:..\thirdparty\lib /LIBPATH:"d:\Program Files (x86)\Visual Leak Detector\lib\Win32" jsoncpp.lib libcurl_a.lib ws2_32.lib wldap32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\github\httpjson\build\win\Debug\http_json.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\github\httpjson\build\win\Debug\http_json.lib" /MACHINE:X86 /DLL Debug\httpClient.obj
          Debug\httpjson.obj
          Debug\JsonBase.obj
-         LINK : 没有找到 E:\github\httpjson\build\win\Debug\http_json.dll 或上一个增量链接没有生成它；正在执行完全链接
          http_json.vcxproj -> E:\github\httpjson\build\win\Debug\http_json.dll
      1>已完成生成项目“E:\github\httpjson\src\http_json.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:01.92
+已用时间 00:00:00.97

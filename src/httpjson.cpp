@@ -15,16 +15,18 @@ static size_t OnWriteData(void* buffer, size_t size, size_t nmemb, void* lpVoid)
 	return nmemb;
 }
 
-int HttpGet(const std::string & strUrl, SRCurrentDllSoType dlltype, std::string & key3)
+int HttpGet(const std::string & strUrl, SRCurrentDllSoType *dlltype, std::string & key3)
 {
-	if (strUrl.empty() && dlltype.version3.empty() && dlltype.id3.empty())
+	
+	if (strUrl.empty() && dlltype->version3.empty() && dlltype->id3.empty())
 	{
 		printf("param error\n");
 		return -1;
 	}
-	printf("version3 :%s\n", dlltype.version3.c_str());
-	printf("id3 :%s\n", dlltype.id3.c_str());
-	printf("appid :%s\n", dlltype.appId.c_str());
+	printf("version3 :%s\n", dlltype->version3.c_str());
+	printf("id3 :%s\n", dlltype->id3.c_str());
+	printf("appid :%s\n", dlltype->appId.c_str());
+
 
 	CURL *curl;
 	CURLcode res;
@@ -36,9 +38,9 @@ int HttpGet(const std::string & strUrl, SRCurrentDllSoType dlltype, std::string 
 	if (curl)
 	{
 	
-		std::string strparam6 = "?version3=" +dlltype.version3;
-		strparam6 = strparam6 + "&id3=" + dlltype.id3;
-		strparam6 = strparam6 + "&appId=" + dlltype.appId;
+		std::string strparam6 = "?version3=" + dlltype->version3;
+		strparam6 = strparam6 + "&id3=" + dlltype->id3;
+		strparam6 = strparam6 + "&appId=" + dlltype->appId;
 
 		string currentAllurl = strUrl + strparam6;
 
@@ -62,8 +64,8 @@ int HttpGet(const std::string & strUrl, SRCurrentDllSoType dlltype, std::string 
 
 
 		curl_easy_setopt(curl, CURLOPT_NOSIGNAL, 1);
-		curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 3);
-		curl_easy_setopt(curl, CURLOPT_TIMEOUT, 3);
+		curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 2);
+		curl_easy_setopt(curl, CURLOPT_TIMEOUT, 2);
 
 
 		res = curl_easy_perform(curl);
