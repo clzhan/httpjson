@@ -86,6 +86,11 @@ int HttpGet(const std::string & strUrl, SRCurrentDllSoType *dlltype, char* key3,
 		return -1;
 	}
 
+	if(strResponse.empty())
+	{
+		return -1;
+	}
+
 	Json::Reader reader;
 	Json::Value value;
 	
@@ -119,6 +124,10 @@ int HttpGet(const std::string & strUrl, SRCurrentDllSoType *dlltype, char* key3,
 		printf("id3_from_server %s\n", id3_from_server.c_str());
 		printf("key3_from_server %s\n", key3_from_server.c_str());
 
+	}
+	else
+	{
+		return -1;
 	}
 
 	

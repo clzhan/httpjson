@@ -17,21 +17,8 @@ using namespace std;
 #include <unistd.h>
 #include <sys/ioctl.h>
 #include <netinet/in.h>
-	  #include <arpa/inet.h>
+#include <arpa/inet.h>
 
-string& trim(string &s)
-{
-	if (s.empty())
-	{
-		return s;
-	}
-
-	s.erase(0, s.find_first_not_of(" "));
-	s.erase(s.find_last_not_of(" ") + 1);
-	return s;
-}
-// MacAddress.cpp : Defines the entry point for the console application.
-//
 
 static int GetWlanMac(char *current_mac, int current_mac_len)
 {
@@ -79,6 +66,14 @@ static int GetWlanMac(char *current_mac, int current_mac_len)
 }
 //WARNING! NO HANDLING FOR VERY_LONG COMMAND READS YET
 //IMSI
+//国际移动用户识别码（IMSI：International Mobile SubscriberIdentification Number）是区别移动用户的标志，储存在SIM卡中，可用于区别移动用户的有效信息。
+//其总长度不超过15位，使用0～9的数字。其中MCC是移动用户所属国家代号，占3位数字，中国的MCC规定为460；
+//MNC是移动网号码，最多由两位数字组成，用于识别移动用户所归属的移动通信网；MSIN是移动用户识别码，用以识别某一移动通信网中的移动用户。
+
+//MNC:Mobile Network Code，移动网络码，2~3位，中国移动系统使用00、02、07，中国联通GSM系统使用01，中国电信CDMA系统使用03，一个典型的IMSI号码为460030912121001
+
+//取后12位
+
 static int GetLikeMac(char* like_mac, int like_mac_len) 
 {
 
@@ -192,14 +187,14 @@ static int GetMac(char *mac, int mac_len)
 int main(int argc, char* argv[])
 {
 
-	std:string url = "http://103.249.255.237/utils/v1/utils/getkey3";
+	std:string url = "http://akey.suirui.com/utils/v1/utils/getkey3";
 
 	char mac[13] = {0};
 	memset(mac, 0, 64*sizeof(char));
 
 	if(GetMac(mac, 13) >= 0)
 	{
-		printf("mac %d\n", mac);
+		printf("mac %s\n", mac);
 		if(strlen(mac) > 5)
 		{
 			SRCurrentDllSoType dlltype;
