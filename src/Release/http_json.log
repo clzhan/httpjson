@@ -1,7 +1,16 @@
-﻿生成启动时间为 2016/6/24 16:30:43。
+﻿生成启动时间为 2016/6/28 9:57:06。
      1>项目“E:\github\httpjson\src\http_json.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I../interface /I../thirdparty/include /I"d:\Program Files (x86)\Visual Leak Detector\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D _WINSOCK_DEPRECATED_NO_WARNINGS /D CURL_STATICLIB /D HTTPJSON_EXPORTS /D _WINDLL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt httpjson.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I../interface /I../thirdparty/include /I"d:\Program Files (x86)\Visual Leak Detector\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D _WINSOCK_DEPRECATED_NO_WARNINGS /D CURL_STATICLIB /D HTTPJSON_EXPORTS /D _WINDLL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt JsonBase.cpp httpClient.cpp httpjson.cpp
+         JsonBase.cpp
+     1>JsonBase.cpp(171): warning C4018: “>”: 有符号/无符号不匹配
+     1>JsonBase.cpp(321): warning C4018: “>”: 有符号/无符号不匹配
+     1>JsonBase.cpp(401): warning C4018: “>”: 有符号/无符号不匹配
+     1>JsonBase.cpp(687): warning C4018: “>”: 有符号/无符号不匹配
+     1>JsonBase.cpp(777): warning C4018: “>”: 有符号/无符号不匹配
+     1>JsonBase.cpp(836): warning C4018: “>=”: 有符号/无符号不匹配
+         httpClient.cpp
+     1>e:\github\httpjson\src\httpClient.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
          httpjson.cpp
      1>e:\github\httpjson\src\httpClient.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
        Link:
@@ -19,4 +28,4 @@
 
 生成成功。
 
-已用时间 00:00:02.05
+已用时间 00:00:02.62

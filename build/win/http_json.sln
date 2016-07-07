@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "http_json", "..\..\src\http
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "main", "main\main.vcxproj", "{9096646D-1FE7-4B5D-B8BD-2927322AC29F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mac", "mac\mac.vcxproj", "{CCDEB870-E9F0-4A51-B2E5-FDF4A9ACC669}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -21,6 +23,10 @@ Global
 		{9096646D-1FE7-4B5D-B8BD-2927322AC29F}.Debug|Win32.Build.0 = Debug|Win32
 		{9096646D-1FE7-4B5D-B8BD-2927322AC29F}.Release|Win32.ActiveCfg = Release|Win32
 		{9096646D-1FE7-4B5D-B8BD-2927322AC29F}.Release|Win32.Build.0 = Release|Win32
+		{CCDEB870-E9F0-4A51-B2E5-FDF4A9ACC669}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CCDEB870-E9F0-4A51-B2E5-FDF4A9ACC669}.Debug|Win32.Build.0 = Debug|Win32
+		{CCDEB870-E9F0-4A51-B2E5-FDF4A9ACC669}.Release|Win32.ActiveCfg = Release|Win32
+		{CCDEB870-E9F0-4A51-B2E5-FDF4A9ACC669}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

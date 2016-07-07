@@ -100,8 +100,9 @@ int GetMac(char * mac)
 int main(int argc, char* argv[])
 {
 
-	std:string url = "http://103.249.255.237/utils/v1/utils/getkey3";
+//std:string url = "http://103.249.255.237/utils/v1/utils/getkey3";
 
+	std:string url = "http://akey.suirui.com/utils/v1/utils/getkey3";
 	SRCurrentDllSoType dlltype;
 
 	dlltype.version3 = "26";
